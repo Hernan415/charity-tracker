@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       desc: {
-        type: Sequelize.TEXT
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
