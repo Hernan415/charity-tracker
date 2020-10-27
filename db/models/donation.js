@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   Donation.associate = function(models) {
-    Donation.hasMany(models.Rsvp);
+    Donation.hasMany(models.Contact);
   };
 
   return Donation;

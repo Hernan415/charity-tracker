@@ -1,16 +1,16 @@
-<!-- views/rsvp-new.handlebars -->
+<!-- views/Contacts-new.handlebars -->
 <div class="row mt-4">
   <div class="col-lg-6 offset-lg-3">
       <div class="card">
           <div class="card-body">
               <div class="card-title">
-                  <h3>New RSVP</h3>
+                  <h3>New Contact</h3>
                   <div class="lead">
                       donation: {{donation.title}}
                   </div>
               </div>
               <div class="card-text">
-                  <form action="/donations/{{donation.id}}/rsvps" method="post">
+                  <form action="/donations/{{donation.id}}/contacts" method="post">
                       <div class="form-group">
                           <label for="title">Name</label>
                           <input name="name" class="form-control" placeholder="Jane Doe" />

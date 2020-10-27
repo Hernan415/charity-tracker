@@ -1,7 +1,6 @@
 {
   "name": "charity-tracker",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -14,6 +13,7 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
+    "handlebars": "^4.7.6",
     "method-override": "^3.0.0",
     "moment": "^2.29.1",
     "mysql2": "^2.2.5",
@@ -21,5 +21,6 @@
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0"
-  }
+  },
+  "description": ""
 }

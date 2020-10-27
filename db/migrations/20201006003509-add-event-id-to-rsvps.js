@@ -5,10 +5,10 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.addColumn('Rsvps', 'DonationId', Sequelize.INTEGER).then(() => {
-      return queryInterface.addConstraint('Rsvps', ['DonationId'], {
+    return queryInterface.addColumn('Contacts', 'DonationId', Sequelize.INTEGER).then(() => {
+      return queryInterface.addConstraint('Contacts', ['DonationId'], {
         type: 'foreign key',
-        name: 'donation_rsvps',
+        name: 'donation_contacts',
         references: { //Required field
           table: 'donations',
           field: 'id'
@@ -20,6 +20,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.removeColumn('Rsvps', 'DonationId');
+    return queryInterface.removeColumn('Contacts', 'DonationId');
   }
   };

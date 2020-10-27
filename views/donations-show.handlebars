@@ -12,17 +12,17 @@
   </div>
   <div class="col-lg-4 offset-lg-1">
     <div class="d-flex justify-content-between">
-        <b>RSVPs ({{donation.Rsvps.length}})</b>
-        <a href="/donations/{{donation.id}}/rsvps/new" class="btn btn-primary btn-sm">RSVP</a>
+        <b>Contacts ({{donation.Contacts.length}})</b>
+        <a href="/donations/{{donation.id}}/contacts/new" class="btn btn-primary btn-sm">Contact</a>
     </div>
     <div class="list-group mt-4">
-      {{#each donation.Rsvps}}
+      {{#each donation.Contacts}}
         <div class="list-group-item clearfix">
           <div class="float-left">
             {{this.name}}
           </div>
           <div class="float-right">
-            <form class="form-inline" action="/donations/{{../donation.id}}/rsvps/{{this.id}}?_method=DELETE" method="post">
+            <form class="form-inline" action="/donations/{{../donation.id}}/contacts/{{this.id}}?_method=DELETE" method="post">
               <button type="submit" class="btn btn-link btn-sm">Remove</button>
             </form>
           </div>

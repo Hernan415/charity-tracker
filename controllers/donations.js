@@ -25,7 +25,7 @@ module.exports = function (app, models) {
 
     // SHOW
       app.get('/donations/:id', (req, res) => {
-        models.Donation.findByPk(req.params.id, { include: [{ model: models.Rsvp }] }).then(donation => {
+        models.Donation.findByPk(req.params.id, { include: [{ model: models.Contact }] }).then(donation => {
           let createdAt = donation.createdAt;
           createdAt = moment(createdAt).format('MMMM Do YYYY, h:mm:ss a');
           donation.createdAtFormatted = createdAt;
