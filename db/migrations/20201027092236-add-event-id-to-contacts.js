@@ -5,18 +5,19 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-    return queryInterface.addColumn('Contacts', 'DonationId', Sequelize.INTEGER).then(() => {
-      return queryInterface.addConstraint('Contacts', ['DonationId'], {
-        type: 'foreign key',
-        name: 'donation_contact',
+    return queryInterface.addColumn(
+      'Contacts',
+      'DonationId',
+      {
+        type: Sequelize.INTEGER,
         references: { //Required field
-          table: 'Donations',
-          field: 'id'
+          model: 'Donations',
+          key: 'id'
         },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
-      });
-    });
+      }
+    );
   },
 
   down: (queryInterface, Sequelize) => {
