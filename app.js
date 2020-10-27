@@ -27,8 +27,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const models = require('./db/models');
 
 require('./controllers/donations')(app, models);
-
-require('./controllers/donations')(app, models);
 require('./controllers/rsvps')(app, models);
 
 
