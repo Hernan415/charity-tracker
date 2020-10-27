@@ -4,15 +4,15 @@ const sequelize = require('sequelize');
 
 // models/todo.js
 module.exports = (sequelize, DataTypes) => {
-  const Event = sequelize.define('Event', {
+  const Donation = sequelize.define('Donation', {
     title: DataTypes.STRING,
     desc: DataTypes.TEXT,
     imgUrl: DataTypes.STRING
   }, {});
 
-  Event.associate = function(models) {
-    Event.hasMany(models.Rsvp);
+  Donation.associate = function(models) {
+    Donation.hasMany(models.Rsvp);
   };
 
-  return Event;
+  return Donation;
 };

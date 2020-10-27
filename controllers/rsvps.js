@@ -2,17 +2,17 @@
 
 module.exports = (app, models) => {
   // NEW
-  app.get('/events/:eventId/rsvps/new', (req, res) => {
-    models.Event.findByPk(req.params.eventId).then(event => {
+  app.get('/donations/:donationId/rsvps/new', (req, res) => {
+    models.Donation.findByPk(req.params.eventId).then(donation => {
       res.render('rsvps-new', { event: event });
     });
   });
 
   // CREATE
-  app.post('/events/:eventId/rsvps', (req, res) => {
-    req.body.EventId = req.params.eventId;
+  app.post('/donations/:donationsId/rsvps', (req, res) => {
+    req.body.DonationId = req.params.DonationId;
     models.Rsvp.create(req.body).then(rsvp => {
-      res.redirect(`/events/${req.params.eventId}`);
+      res.redirect(`/donations/${req.params.donationId}`);
     }).catch((err) => {
         console.log(err)
     });
@@ -20,10 +20,10 @@ module.exports = (app, models) => {
 
   // DESTROY
   // DELETE
-  app.delete('/events/:eventId/rsvps/:id', (req, res) => {
+  app.delete('/donations/:donationId/rsvps/:id', (req, res) => {
       models.Rsvp.findByPk(req.params.id).then(rsvp => {
           rsvp.destroy();
-          res.redirect(`/events/${req.params.eventId}`);
+          res.redirect(`/donations/${req.params.donationId}`);
       }).catch((err) => {
           console.log(err);
       });

@@ -2,17 +2,19 @@
  <div class="row mt-4">
      <div class="col-lg-6 offset-lg-3">
        <h1>Donators</h1>
-       <a href="/events/new">New Donation</a>
+       <a href="/donations/new">New Donation</a>
          <h1>Donations</h1>
-         {{#each events}}
+          <h2> Total Donations</h2>
+
+         {{#each donations}}
           <div class="card mt-3">
             <img class="card-img-top" src="{{this.imgUrl}}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{this.title}}</h5>
                 <p class="card-text">{{this.description}}</p>
                 <div class="text-right">
-                  <a href="/events/{{this.id}}/rsvps/new" class="btn btn-info">Rsvp</a>
-                  <a href="/events/{{this.id}}" class="btn btn-primary">View</a>
+                  <a href="/donations/{{this.id}}/rsvps/new" class="btn btn-info">Rsvp</a>
+                  <a href="/donations/{{this.id}}" class="btn btn-primary">View</a>
                 </div>
               </div>
             </div>
