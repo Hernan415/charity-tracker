@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Contact.associate = function(models) {
         Contact.belongsTo(models.Donation); // EventId
+        };
     }
   };
   Contact.init({
