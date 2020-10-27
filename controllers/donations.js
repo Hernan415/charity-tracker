@@ -1,4 +1,4 @@
-//events.js
+//donations.js
 
 module.exports = function (app, models) {
 

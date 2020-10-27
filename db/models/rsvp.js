@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Rsvp.associate = function(models) {
-        Rsvp.belongsTo(models.Donation); // EventId
+        Rsvp.belongsTo(models.Donation); // donationId
       };
     }
   };

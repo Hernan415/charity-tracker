@@ -8,7 +8,7 @@ module.exports = {
     return queryInterface.addColumn('Rsvps', 'DonationId', Sequelize.INTEGER).then(() => {
       return queryInterface.addConstraint('Rsvps', ['DonationId'], {
         type: 'foreign key',
-        name: 'event_rsvps',
+        name: 'donation_rsvps',
         references: { //Required field
           table: 'donations',
           field: 'id'

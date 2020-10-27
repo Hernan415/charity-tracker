@@ -3,8 +3,8 @@
 module.exports = (app, models) => {
   // NEW
   app.get('/donations/:donationId/rsvps/new', (req, res) => {
-    models.Donation.findByPk(req.params.eventId).then(donation => {
-      res.render('rsvps-new', { event: event });
+    models.Donation.findByPk(req.params.donationId).then(donation => {
+      res.render('rsvps-new', { donation: donation });
     });
   });
 

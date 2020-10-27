@@ -1,4 +1,4 @@
-<!-- views/events-edit.handlebars -->
+<!-- views/donations-edit.handlebars -->
 
 <div class="row mt-4">
     <div class="col-lg-6 offset-lg-3">
@@ -9,7 +9,7 @@
                 </div>
                 <div class="card-text">
                     <form action="/donations/{{donation.id}}?_method=PUT" method="post">
-                        {{> events-form }}
+                        {{> donations-form }}
                         <div class="text-right">
                             <a href="/donations/{{donation.id}}" class='text-muted mr-2'>Cancel</a>
                             <button type="submit" class="btn btn-primary" name="button">Update</button>
