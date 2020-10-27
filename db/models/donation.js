@@ -1,24 +1,18 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+
+const sequelize = require('sequelize');
+
+// models/todo.js
 module.exports = (sequelize, DataTypes) => {
-  class Donation extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  };
-  Donation.init({
+  const Donation = sequelize.define('Donation', {
     title: DataTypes.STRING,
-    desc: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Donation',
-  });
+    desc: DataTypes.TEXT,
+    imgUrl: DataTypes.STRING
+  }, {});
+
+  Donation.associate = function(models) {
+    Donation.hasMany(models.Contact);
+  };
+
   return Donation;
 };
