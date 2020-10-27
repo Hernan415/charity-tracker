@@ -10,7 +10,7 @@ module.exports = {
         type: 'foreign key',
         name: 'event_rsvps',
         references: { //Required field
-          table: 'Events',
+          table: 'events',
           field: 'id'
         },
         onDelete: 'CASCADE',
