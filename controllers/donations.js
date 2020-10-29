@@ -6,6 +6,8 @@ module.exports = function (app, models) {
     app.get('/', (req, res) => {
         models.Donation.findAll({ order: [['createdAt', 'DESC']] }).then(donations => {
             res.render('donations-index', { donations: donations });
+        }).catch(err => {
+          console.log(err)
         })
     })
 
